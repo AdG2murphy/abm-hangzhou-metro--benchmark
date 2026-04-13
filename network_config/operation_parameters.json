@@ -1,0 +1,52 @@
+{
+  "operation_hours": {
+    "start": "04:05",
+    "end": "25:09",
+    "description": "Times beyond 24:00 represent next-day early morning (e.g., 25:09 = 01:09 next day)"
+  },
+  "default_headway_minutes": 5,
+  "peak_periods": [
+    {
+      "start": "06:50",
+      "end": "08:50",
+      "headway_minutes": 2.5,
+      "period": "morning_peak"
+    },
+    {
+      "start": "09:20",
+      "end": "17:00",
+      "headway_minutes": 4.5,
+      "period": "off_peak"
+    },
+    {
+      "start": "17:30",
+      "end": "19:00",
+      "headway_minutes": 2.5,
+      "period": "evening_peak"
+    },
+    {
+      "start": "19:00",
+      "end": "20:00",
+      "headway_minutes": 3.5,
+      "period": "evening_transition"
+    }
+  ],
+  "train_capacity": 2592,
+  "train_capacity_note": "6-car Type-B train, rated capacity 2480, max capacity 2592",
+  "metro_speed_kmh": 70,
+  "station_stop_time_minutes": 1,
+  "transfer_time_minutes": 3,
+  "station_entry_flow_limit_per_minute": 550,
+  "station_entry_flow_limit_note": "Maximum passenger entry rate per station per minute (0 = no limit)",
+  "block_length_meters": 100,
+  "block_length_note": "Minimum safe following distance between trains on the same track (meters)",
+  "simulation_step_minutes": 1,
+  "route_choice": {
+    "k_shortest_paths": 15,
+    "k_shortest_paths_note": "Number of candidate routes each passenger perceives",
+    "logit_epsilon": -10,
+    "logit_beta_transfer_times": -2.346038,
+    "logit_beta_travel_time": -0.186402,
+    "logit_note": "Multinomial Logit model: U = epsilon + beta_tt * travel_time + beta_tf * transfer_times. Probability of choosing route i = exp(U_i) / sum(exp(U_j))"
+  }
+}
